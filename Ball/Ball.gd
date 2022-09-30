@@ -23,6 +23,8 @@ func _on_Ball_body_entered(body):
 	
 	
 func _integrate_forces(state):
+	if $Highlight.modulate.a > 0:
+		$Highlight.modulate.a -= decay
 	if position.y > Global.VP.y + 100:
 		die()
 	if accelerate:
